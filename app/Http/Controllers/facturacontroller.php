@@ -76,7 +76,7 @@ class facturacontroller extends Controller
      */
     public function edit($COD_FACTURA)
     {
-        $facturas = factura::findorfail($COD_FACTURA); 
+        $facturas = Factura::findorfail($COD_FACTURA); 
         
         return view('factura.edit', compact('facturas')); 
     }
