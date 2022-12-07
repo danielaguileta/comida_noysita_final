@@ -25,7 +25,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-      
+        if($this->app->environment('production')) {
+            \URL::forceScheme('https');
+        }
         Validator::extend('alpha_spaces', function ($attribute, $value) {
 
             // This will only accept alpha and spaces. 
