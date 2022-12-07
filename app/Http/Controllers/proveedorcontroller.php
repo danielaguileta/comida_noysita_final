@@ -18,7 +18,7 @@ class proveedorcontroller extends Controller
      */
     public function index()
     {
-        $proveedores = Http::get('http://localhost:9000/proveedores/')->json();
+        $proveedores = Http::get('https://comidanoysitaapifinal-production.up.railway.app/proveedores/')->json();
     
         return view('proveedor.index',compact('proveedores')); 
     }
@@ -41,7 +41,7 @@ class proveedorcontroller extends Controller
      */
     public function store(ValidacionProveedor $request)
     {
-        $proveedores = Http::post('http://localhost:9000/insertar_proveedor', [
+        $proveedores = Http::post('https://comidanoysitaapifinal-production.up.railway.app/insertar_proveedor', [
             'NOMBRE_PROVEEDOR'=> $request->nombre,
             'CELULAR_PROVEEDOR' => $request->celular_proveedor,
             'PRODUCTO_VENTA' => $request->producto_venta,
@@ -87,7 +87,7 @@ class proveedorcontroller extends Controller
     public function update(ValidacionProveedor $request, $COD_PROVEEDOR)
     {
         
-        $proveedores  = Http::put('http://localhost:9000/proveedor/edit/'. $COD_PROVEEDOR ,[
+        $proveedores  = Http::put('https://comidanoysitaapifinal-production.up.railway.app/proveedor/edit/'. $COD_PROVEEDOR ,[
              'NOMBRE_PROVEEDOR'=> $request->nombre,
             'CELULAR_PROVEEDOR' => $request->celular_proveedor,
             'PRODUCTO_VENTA' => $request->producto_venta,
@@ -110,7 +110,7 @@ class proveedorcontroller extends Controller
     public function destroy($COD_PROVEEDOR)
     {
         
-        $proveedores = Http::delete('http://localhost:9000/proveedores/delete/'. $COD_PROVEEDOR);
+        $proveedores = Http::delete('https://comidanoysitaapifinal-production.up.railway.app/proveedores/delete/'. $COD_PROVEEDOR);
 
         return redirect()-> route('proveedor.index')->with('eliminado','El proveedor fue eliminado correctamente'); 
     }

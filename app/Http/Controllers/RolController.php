@@ -18,7 +18,7 @@ class RolController extends Controller
      */
     public function index()
     {
-        $roles = Http::get('http://localhost:9000/rol/')->json();
+        $roles = Http::get('https://comidanoysitaapifinal-production.up.railway.app/rol/')->json();
     
         return view('rol.index',compact('roles')); 
     }
@@ -41,7 +41,7 @@ class RolController extends Controller
      */
     public function store(Request $request)
     {
-        $roles = Http::post('http://localhost:9000/insertar_rol', [
+        $roles = Http::post('https://comidanoysitaapifinal-production.up.railway.app/insertar_rol', [
             'ROL'=> $request->rol,
             'USUARIO' => $request->Usuario,
             'FECHA_REGISTRO' => $request->fecha,
@@ -83,7 +83,7 @@ class RolController extends Controller
      */
     public function update(Request $request, $COD_ROL)
     {
-        $ROLES  = Http::put('http://localhost:9000/rol/edit/'. $COD_ROL ,[
+        $ROLES  = Http::put('https://comidanoysitaapifinal-production.up.railway.app/rol/edit/'. $COD_ROL ,[
             'ROL'=> $request->rol,
             'USUARIO' => $request->Usuario,
             'FECHA_REGISTRO' => $request->fecha_registro,
@@ -101,7 +101,7 @@ class RolController extends Controller
     public function destroy($COD_ROL)
     {
           
-        $roles = Http::delete('http://localhost:9000/rol/delete/'. $COD_ROL);
+        $roles = Http::delete('https://comidanoysitaapifinal-production.up.railway.app/rol/delete/'. $COD_ROL);
 
         return redirect()-> route('rol.index')->with('eliminado','El rol fue eliminado correctamente'); 
     }

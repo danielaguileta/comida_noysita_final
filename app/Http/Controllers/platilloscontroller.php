@@ -17,7 +17,7 @@ class platilloscontroller extends Controller
      */
     public function index()
     {
-        $platillos = Http::get('http://localhost:9000/platillos/')->json();
+        $platillos = Http::get('https://comidanoysitaapifinal-production.up.railway.app/platillos/')->json();
     
         return view('platillos.index',compact('platillos')); 
 
@@ -41,7 +41,7 @@ class platilloscontroller extends Controller
      */
     public function store( ValidacionPlatillo $request)
     {
-        $platillos = Http::post('http://localhost:9000/insertar_platillos', [
+        $platillos = Http::post('https://comidanoysitaapifinal-production.up.railway.app/insertar_platillos', [
             'NOMBRE_PLATILLO'=> $request->nombre_platillo,
             'PRECIO_PLATILLO' => $request->precio_platillo,
             'RECETA_PLATILLO' => $request->receta_platillo,
@@ -83,7 +83,7 @@ class platilloscontroller extends Controller
      */
     public function update(ValidacionPlatillo $request, $COD_PLATILLO)
     {
-        $platillos  = Http::put('http://localhost:9000/platillos/edit/'. $COD_PLATILLO ,[
+        $platillos  = Http::put('https://comidanoysitaapifinal-production.up.railway.app/platillos/edit/'. $COD_PLATILLO ,[
             'NOMBRE_PLATILLO'=> $request->nombre_platillo,
             'PRECIO_PLATILLO' => $request->precio_platillo,
             'RECETA_PLATILLO' => $request->receta_platillo,
@@ -101,7 +101,7 @@ class platilloscontroller extends Controller
     public function destroy($COD_PLATILLO)
     {
         
-        $platillos = Http::delete('http://localhost:9000/platillos/delete/'. $COD_PLATILLO);
+        $platillos = Http::delete('https://comidanoysitaapifinal-production.up.railway.app/platillos/delete/'. $COD_PLATILLO);
 
         return redirect()-> route('platillos.index')->with('eliminado','El platillo fue eliminado correctamente'); 
     }

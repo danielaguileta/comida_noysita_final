@@ -18,7 +18,7 @@ class clientecontroller extends Controller
      */
     public function index()
     {
-        $clientes = Http::get('http://localhost:9000/clientes/')->json();
+        $clientes = Http::get('https://comidanoysitaapifinal-production.up.railway.app/clientes/')->json();
     
         return view('clientes.index',compact('clientes')); 
 

@@ -17,7 +17,7 @@ class caicontroller extends Controller
      */
     public function index()
     {
-        $CAIS = Http::get('http://localhost:9000/cai/')->json();
+        $CAIS = Http::get('https://comidanoysitaapifinal-production.up.railway.app/cai/')->json();
     
         return view('cai.index',compact('CAIS')); 
     }
@@ -40,7 +40,7 @@ class caicontroller extends Controller
      */
     public function store(ValidacionCai $request)
     {
-        $CAIS = Http::post('http://localhost:9000/insertar_cai', [
+        $CAIS = Http::post('https://comidanoysitaapifinal-production.up.railway.app/insertar_cai', [
             'CAI'=> $request->cai,
             'TIPO_DOCUMENTO' => $request->tipo_documento,
             'VALOR_FISCAL' => $request->valor_fiscal,
@@ -85,7 +85,7 @@ class caicontroller extends Controller
      */
     public function update(ValidacionCai $request, $COD_CAI)
     {
-        $CAIS  = Http::put('http://localhost:9000/cai/edit/'. $COD_CAI ,[
+        $CAIS  = Http::put('https://comidanoysitaapifinal-production.up.railway.app/cai/edit/'. $COD_CAI ,[
             'CAI'=> $request->cai,
             'TIPO_DOCUMENTO' => $request->tipo_documento,
             'VALOR_FISCAL' => $request->valor_fiscal,
