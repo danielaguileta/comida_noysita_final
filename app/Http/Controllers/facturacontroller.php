@@ -7,7 +7,6 @@ use App\Http\Requests\ValidacionFactura;
 use App\Models\Factura;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use App\Models\Facturas;
 
 
 class facturacontroller extends Controller
