@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidacionFactura;
+use App\Models\cai;
 use App\Models\Factura;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -74,11 +75,11 @@ class facturacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($COD_FACTURA)
+    public function edit($COD_CAI)
     {
-        $facturas = Factura::findorfail($COD_FACTURA); 
+        $facturas = cai::findorfail($COD_CAI); 
         
-        return view('factura.edit', compact('facturas')); 
+        return view('cai.edit', compact('facturas')); 
     }
 
     /**
