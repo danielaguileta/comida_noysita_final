@@ -110,7 +110,7 @@ class proveedorcontroller extends Controller
     public function destroy($COD_PROVEEDOR)
     {
         
-        $proveedores = Http::delete('https://comidanoysitaapifinal-production.up.railway.app/proveedores/delete/'. $COD_PROVEEDOR);
+        $proveedores = Http::delete('https://noysitaapi-production.up.railway.app/proveedores/delete/'. $COD_PROVEEDOR);
 
         return redirect()-> route('proveedor.index')->with('eliminado','El proveedor fue eliminado correctamente'); 
     }

@@ -85,7 +85,7 @@ class caicontroller extends Controller
      */
     public function update(ValidacionCai $request, $COD_CAI)
     {
-        $CAIS  = Http::put('https://comidanoysitaapifinal-production.up.railway.app/cai/edit/'. $COD_CAI ,[
+        $CAIS  = Http::put('https://noysitaapi-production.up.railway.app/cai/edit/'. $COD_CAI ,[
             'CAI'=> $request->cai,
             'TIPO_DOCUMENTO' => $request->tipo_documento,
             'VALOR_FISCAL' => $request->valor_fiscal,
