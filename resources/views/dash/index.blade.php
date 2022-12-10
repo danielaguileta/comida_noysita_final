@@ -21,7 +21,7 @@
 
             </div>
             <div class="icon">
-                <i class="fas fa-dollar-sign"></i>
+            <i class="fas fa-user"></i>
             </div>
             <a href="{{route('empleados.index')}}" class="small-box-footer">Ver empleados<i class="fas fa-arrow-circle-right"></i></a>
         </div>
@@ -29,7 +29,7 @@
 
     <div class="col-lg-3 col-6">
 
-        <div class="small-box bg-info">
+        <div class="small-box bg-warning">
             <div class="inner">
 
                 <h4>{{$clientes}}</h4>
@@ -38,7 +38,7 @@
 
             </div>
             <div class="icon">
-                <i class="fas fa-dollar-sign"></i>
+            <i class="fas fa-users"></i>
             </div>
             <a href="{{route('clientes.index')}}" class="small-box-footer">Ver clientes<i class="fas fa-arrow-circle-right"></i></a>
         </div>
@@ -46,7 +46,7 @@
     </div>
     <div class="col-lg-3 col-6">
 
-        <div class="small-box bg-info">
+        <div class="small-box bg-danger">
             <div class="inner">
 
                 <h4>{{$proveedores}}</h4>
@@ -55,23 +55,23 @@
 
             </div>
             <div class="icon">
-                <i class="fas fa-dollar-sign"></i>
+            <i class="fas fa-box"></i>
             </div>
             <a href="{{route('proveedor.index')}}" class="small-box-footer">Ver proveedores<i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <div class="col-lg-3 col-6">
 
-        <div class="small-box bg-info">
+        <div class="small-box bg-success">
             <div class="inner">
 
-                <h4>L {{$compras}}</h4>
-
+            @foreach($compras as $compra)
+                <h4>L {{number_format($compra->total,2)}}</h4>
+                @endforeach
                 <p>Compras</p>
-
             </div>
             <div class="icon">
-                <i class="fas fa-dollar-sign"></i>
+            <i class="fas fa-shopping-cart"></i>
             </div>
             <a href="{{route('compra.index')}}" class="small-box-footer">Ver compras<i class="fas fa-arrow-circle-right"></i></a>
         </div>

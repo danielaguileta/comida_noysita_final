@@ -21,9 +21,11 @@ class dashboardController extends Controller
     public function index()
     {
           $empleados = empleado::count();
-          $clientes = empleado::count();
+          $clientes = Cliente::count();
           $proveedores = proveedor::count();
           $compras = compra::count();
+          $compras = compra::select(DB::raw('SUM(PRECIO_PRODUCTO*CANTIDAD_PRODUCTO) as total'))
+          ->get();
         return view('dash.index' , compact('empleados','clientes', 'proveedores','compras'));
     }
 
