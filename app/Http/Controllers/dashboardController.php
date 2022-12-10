@@ -19,7 +19,6 @@ class dashboardController extends Controller
      */
     public function index()
     {
-        $empleados = Empleado::count();
         return view('dash.index', compact('empleados'));
     }
 
