@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class dashboardController extends Controller
 {
@@ -13,7 +14,8 @@ class dashboardController extends Controller
      */
     public function index()
     {
-        return view('dash.index');
+        $total_clientes = Http::get('https://noysitaapi-production.up.railway.app/total_clientes/')->json();
+        return view('dash.index' ,compact('total_clientes'));
     }
 
     /**
