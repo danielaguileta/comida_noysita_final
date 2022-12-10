@@ -19,7 +19,7 @@ class dashboardController extends Controller
      */
     public function index()
     {
-       
+        return view('dash.index');
     }
 
     /**
