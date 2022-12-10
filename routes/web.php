@@ -41,7 +41,7 @@ Route::get('/dash/el', function () {
 require __DIR__.'/auth.php';
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::resource('dashboard',dashboardController::class)->names('dashboard');
+    Route::resource('dash',dashboardController::class)->names('dash');
     Route::resource('cliente',clientecontroller::class)->names('clientes');
     Route::resource('proveedor',proveedorcontroller::class)->names('proveedor');
     Route::resource('empleados',empleadoscontroller::class)->names('empleados');

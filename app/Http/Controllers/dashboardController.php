@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
+use App\Models\Empleado;
+use App\Models\proveedor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+
 
 class dashboardController extends Controller
 {
@@ -14,8 +19,10 @@ class dashboardController extends Controller
      */
     public function index()
     {
-        $total_clientes = Http::get('https://noysitaapi-production.up.railway.app/total_clientes/')->json();
-        return view('dash.index' ,compact('total_clientes'));
+        $empleados = Empleado::all();
+        $clientes = Cliente::count();
+        $proveedores = proveedor::count();
+        return view('dash.index' ,compact('empleados','clientes','proveedores'));
     }
 
     /**
