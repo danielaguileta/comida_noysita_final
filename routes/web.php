@@ -5,7 +5,6 @@ use App\Http\Controllers\BitacoraController;
 use App\Http\Controllers\caicontroller;
 use App\Http\Controllers\clientecontroller;
 use App\Http\Controllers\compracontroller;
-use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\empleadoscontroller;
 use App\Http\Controllers\facturacontroller;
 use App\Http\Controllers\inventariocontroller;
@@ -32,7 +31,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-
+Route::get('/dash', function () {
+    return view('dash.index');
+})->middleware(['auth'])->name('dash');
 
 Route::get('/dash/el', function () {
     return view('dash.welcome');
@@ -41,7 +42,6 @@ Route::get('/dash/el', function () {
 require __DIR__.'/auth.php';
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::resource('dash',dashboardController::class)->names('dash');
     Route::resource('cliente',clientecontroller::class)->names('clientes');
     Route::resource('proveedor',proveedorcontroller::class)->names('proveedor');
     Route::resource('empleados',empleadoscontroller::class)->names('empleados');
@@ -55,7 +55,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('rol',RolController::class)->names('rol');
     Route::resource('bitacora',BitacoraController::class)->names('bitacora');
     Route::resource('respaldo',respaldoController::class)->names('respaldo');
-
     
     //  Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 

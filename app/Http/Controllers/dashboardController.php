@@ -19,10 +19,7 @@ class dashboardController extends Controller
      */
     public function index()
     {
-        $empleados = Empleado::all();
-        $clientes = Cliente::count();
-        $proveedores = proveedor::count();
-        return view('dash.index' ,compact('empleados','clientes','proveedores'));
+       
     }
 
     /**

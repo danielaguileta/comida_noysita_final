@@ -297,7 +297,7 @@ return [
         [
             'icon' => 'fas fa-hamburger',
             'text' => 'Panel de Bienvenida',
-            'route'  => 'dash.index',
+            'route'  => 'dash',
            
         ],
         [
