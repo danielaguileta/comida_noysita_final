@@ -15,7 +15,7 @@
         <div class="small-box bg-info">
             <div class="inner">
             
-                <h4>$empleadoos</h4>
+                <h4>{{$empleados}}</h4>
                
                 <p>Empleados</p>
 
