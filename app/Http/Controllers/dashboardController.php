@@ -23,10 +23,25 @@ class dashboardController extends Controller
           $empleados = empleado::count();
           $clientes = Cliente::count();
           $proveedores = proveedor::count();
-          $compras = compra::count();
           $compras = compra::select(DB::raw('SUM(PRECIO_PRODUCTO*CANTIDAD_PRODUCTO) as total'))
           ->get();
-        return view('dash.index' , compact('empleados','clientes', 'proveedores','compras'));
+
+          $grafico_compras = compra::select(
+                     DB::raw('MONTH(FECHA_COMPRA) as mes'),
+                     DB::raw('COUNT(1) as count'))
+                     ->groupBy('mes')
+                     ->get()
+                     ->toArray();
+
+                     $conteos = array_fill(0,12,0);
+
+                     foreach ($grafico_compras as $grafico_compra){
+                        $index = $grafico_compra['mes']-1;
+                        $conteos[$index] = $grafico_compra['count'];
+                     }
+                   
+  
+        return view('dash.index' , compact('empleados','clientes', 'proveedores','compras', 'conteos'));
     }
 
     /**
