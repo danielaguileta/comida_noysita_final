@@ -9,77 +9,81 @@
 @stop
 
 @section('content')
+<div class="row">
+    <div class="col-lg-3 col-6">
+
+        <div class="small-box bg-info">
+            <div class="inner">
+
+                <h4></h4>
+
+                <p>Empleados</p>
+
+            </div>
+            <div class="icon">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+            <a href="{{route('empleados.index')}}" class="small-box-footer">Ver empleados<i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+
+        <div class="small-box bg-info">
+            <div class="inner">
+
+                <h4></h4>
+
+                <p>Clientes</p>
+
+            </div>
+            <div class="icon">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+            <a href="{{route('clientes.index')}}" class="small-box-footer">Ver clientes<i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+
+    </div>
+    <div class="col-lg-3 col-6">
+
+        <div class="small-box bg-info">
+            <div class="inner">
+
+                <h4></h4>
+
+                <p>Proveedores</p>
+
+            </div>
+            <div class="icon">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+            <a href="{{route('proveedor.index')}}" class="small-box-footer">Ver proveedores<i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-6">
+
+        <div class="small-box bg-info">
+            <div class="inner">
+
+                <h4>L</h4>
+
+                <p>Compras</p>
+
+            </div>
+            <div class="icon">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+            <a href="{{route('compra.index')}}" class="small-box-footer">Ver compras<i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+</div>
+
 
 <div class="py-5 service-22">
     <div class="container">
         <!-- Row -->
         <div class="row wrap-service-22">
-            <div class="col-lg-3 col-6">
 
-                <div class="small-box bg-info">
-                    <div class="inner">
-
-                        <h4></h4>
-
-                        <p>Empleados</p>
-
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <a href="{{route('empleados.index')}}" class="small-box-footer">Ver empleados<i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-6">
-
-                <div class="small-box bg-info">
-                    <div class="inner">
-
-                        <h4></h4>
-
-                        <p>Clientes</p>
-
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <a href="{{route('clientes.index')}}" class="small-box-footer">Ver clientes<i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-
-            </div>
-            <div class="col-lg-3 col-6">
-
-                <div class="small-box bg-info">
-                    <div class="inner">
-
-                        <h4></h4>
-
-                        <p>Proveedores</p>
-
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <a href="{{route('proveedor.index')}}" class="small-box-footer">Ver proveedores<i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-6">
-
-                <div class="small-box bg-info">
-                    <div class="inner">
-
-                        <h4>L</h4>
-
-                        <p>Compras</p>
-
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <a href="{{route('compra.index')}}" class="small-box-footer">Ver compras<i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
             <!-- Column -->
             <div class="col-lg-6">
                 <img src="https://img.freepik.com/foto-gratis/pollo-frito-crujiente-plato-ensalada-zanahoria_1150-20212.jpg?w=740&t=st=1669740471~exp=1669741071~hmac=5649d3e43875d74a6eb8ef5e00dedd224f9dd4c0b3cced426b0448ddb69fffed" class="rounded img-shadow img-fluid" alt="wrapkit" />
