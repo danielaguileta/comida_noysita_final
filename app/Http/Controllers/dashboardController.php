@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
-use App\Models\Empleado;
+use App\Models\empleado;
 use App\Models\proveedor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +19,7 @@ class dashboardController extends Controller
      */
     public function index()
     {
-          $empleados = Empleado::count();
+          $empleados = empleado::count();
         return view('dash.index' , compact('empleados'));
     }
 
