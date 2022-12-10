@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\compra;
 use App\Models\empleado;
 use App\Models\proveedor;
 use Illuminate\Http\Request;
@@ -20,7 +21,10 @@ class dashboardController extends Controller
     public function index()
     {
           $empleados = empleado::count();
-        return view('dash.index' , compact('empleados'));
+          $clientes = empleado::count();
+          $proveedores = proveedor::count();
+          $compras = compra::count();
+        return view('dash.index' , compact('empleados','clientes', 'proveedores','compras'));
     }
 
     /**

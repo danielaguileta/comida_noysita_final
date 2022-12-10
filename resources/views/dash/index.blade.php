@@ -32,7 +32,7 @@
         <div class="small-box bg-info">
             <div class="inner">
 
-                <h4></h4>
+                <h4>{{$clientes}}</h4>
 
                 <p>Clientes</p>
 
@@ -49,7 +49,7 @@
         <div class="small-box bg-info">
             <div class="inner">
 
-                <h4></h4>
+                <h4>{{$proveedores}}</h4>
 
                 <p>Proveedores</p>
 
@@ -65,7 +65,7 @@
         <div class="small-box bg-info">
             <div class="inner">
 
-                <h4>L</h4>
+                <h4>L {{$compras}}</h4>
 
                 <p>Compras</p>
 
